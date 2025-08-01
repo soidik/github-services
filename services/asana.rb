@@ -1,6 +1,7 @@
 class Service::Asana < Service
   string :auth_token, :restrict_to_branch
-  boolean :restrict_to_last_commit
+  # Allows processing only the last commit's comment for task IDs
+  boolean :restrict_to_last_comment
   white_list :restrict_to_branch, :restrict_to_last_comment
 
   def receive_push
